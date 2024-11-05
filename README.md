@@ -1,9 +1,7 @@
- <H4>Developed BY: HARISHKUMAR R</H4>
+<H1 ALIGN =CENTER> EX.NO:8 Implementation of Speech Recognition</H1>
+<H4>Developed BY: HARISHKUMAR R</H4>
 <H4>Reg no: 212223230073</H4>
-<H4>EX. NO.8</H4>
 <H4>DATE:      </H4>
-<H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
-
 ## Aim:
  To implement the conversion of live speech to text.<BR>
 ## Algorithm:
