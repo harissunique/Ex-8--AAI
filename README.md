@@ -1,65 +1,50 @@
-<H3>Name : HARISHKUMAR R</H3>
-<H3>Reg no: 212223230073</H3>
-<H3>EX. NO: 8</H3>
-<H3>DATE:        </H3>
+<H3>ENTER YOUR NAME:hanumanth rao  a.</H3>
+
+<H3>EX. NO.8</H3>
+<H3>DATE:5/5/24 </H3>
 <H1 ALIGN =CENTER>Implementation of Speech Recognition</H1>
 <H3>Aim:</H3> 
  To implement the conversion of live speech to text.<BR>
+ 
 <h3>Algorithm:</h3>
+Step 1: Import the speech_recognition library<Br>
+Step 2: Initialize the Recognizer<Br>
+Step 3: Create an instance of the Recognizer class, which will be used for recognizing speech.<Br>
+Step 4: Set the duration for audio capture<Br>
+Step 5: Define a variable to specify the duration (in seconds) for which the program will capture audio from the microphone.<Br>
+Step 6: Display a message in the console to prompt the user to speak.<Br>
+Step 7: Capture audio from the default microphone<Br>
+Step 9: Use the default microphone as the audio source.<Br>
+Step 10: Record audio for the specified duration using the Recognizer instance.<Br>
+Step 11: Perform speech recognition with exceptional handling:<Br>
+•	Attempt to recognize speech from the captured audio using the Google Speech Recognition service.<Br>
+•	If successful, print the recognized text.<Br>
+•	Handle specific exceptions: If the recognition result is unknown or if there is an issue with the request to the Google Speech Recognition service, print corresponding error messages.<Br>
+•	A generic exception block captures any other unexpected errors.<Br>
 
-**`Step 1:`** Import the `speech_recognition` library<Br>
-**`Step 2:`** Initialize the Recognizer<Br>
-**`Step 3:`** Create an instance of the Recognizer class, which will be used for recognizing speech.<Br>
-**`Step 4:`** Set the duration for audio capture<Br>
-**`Step 5:`** Define a variable to specify the duration (in seconds) for which the program will capture <Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;audio from the microphone.<Br>
-**`Step 6:`** Display a message in the console to prompt the user to speak.<Br>
-**`Step 7:`** Capture audio from the default microphone<Br>
-**`Step 9:`** Use the default microphone as the audio source.<Br>
-**`Step 10:`** Record audio for the specified duration using the Recognizer instance.<Br>
-**`Step 11:`** Perform speech recognition with exceptional handling:<Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Attempt to recognize speech from the captured audio using the Google Speech <Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Recognition service.<Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	If successful, print the recognized text.<Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	Handle specific exceptions: If the recognition result is unknown or If there is an <Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;issue with the request to the Google Speech Recognition service, print <Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;corresponding error messages.<Br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•	A generic exception block captures any other unexpected errors.<Br>
-
-<H3>Program:</H3>
-
-```py
-import pyaudio
+## Program:
+```
 import speech_recognition as sr
-
-# initialize the Recognizer
 r = sr.Recognizer()
-
-#Set duration for audio capture
-duration = 10
-
-#Record audio
-print("Say Something")
-
-# USe the default microphone as the audio source
+duration = 30
+print("Say something")
 with sr.Microphone() as source:
-    audio_data = r.listen(source, timeout=duration)
+    audio_data = r.listen(source,timeout=duration)
 
 try:
-    text = r.recognize_google(audio_data)
-    print("you said:",text)
+    text= r.recognize_google(audio_data)
 except sr.UnknownValueError:
-    print("Sorry, could not understand audio")
+    print("Sorry, couldn't understand the audio")
 except sr.RequestError as e:
-    print(f'Error with the request to Google Speech Recognition Service: {e}')
+    print(f'Error with request tp Google Speech Recognition service: {e}')
 except Exception as e:
-    print(f'Error: {e}')
+    print(f'Error : {e}')
 ```
-<H3> Output:</H3>
-https://private-user-images.githubusercontent.com/93427253/328040496-5c32ac44-8298-4329-9bad-3d125d904baa.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MzA4MDA0MDEsIm5iZiI6MTczMDgwMDEwMSwicGF0aCI6Ii85MzQyNzI1My8zMjgwNDA0OTYtNWMzMmFjNDQtODI5OC00MzI5LTliYWQtM2QxMjVkOTA0YmFhLnBuZz9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNDExMDUlMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjQxMTA1VDA5NDgyMVomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPWIwZmVlYzljOTBhNjM4NGVlZjAzNjYzMDM3MTlmNTJiNjc3MTMzMGQ1OWUyZjdlMjhiMGY3OWY5OTU1YWUxZWImWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.qQ_D6-kbv8sFrxZeXGls8PT0_7ln7tQGfOIxvap0K9c
+
+## Output:
+
+![aai output](https://github.com/HariniBaskar/Ex-8--AAI/assets/93427253/5c32ac44-8298-4329-9bad-3d125d904baa)
 
 
-
-<H3> Result:</H3>
-
-Thus, we have implemented a program that will transcribe the audio file in the file variable and print the transcribed text on the console, one line at a time.
+## Result:
+Thus, the python program for Speech Recognition is implemented successfully.
