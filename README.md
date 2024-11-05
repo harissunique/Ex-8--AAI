@@ -56,7 +56,8 @@ except Exception as e:
     print(f'Error: {e}')
 ```
 <H3> Output:</H3>
-![O1](https://github.com/user-attachments/assets/24857aff-6d58-4eb6-9792-848f9bee9d5c)
+![image](https://github.com/user-attachments/assets/1c89e0f0-ef2d-427f-b185-8614b24225ea)
+
 
 
 <H3> Result:</H3>
